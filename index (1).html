@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reddit Random</title>
+</head>
+<body>
+<script>
+const urls = [
+  "https://www.reddit.com/r/GooglePixel11Series/",
+  "https://www.reddit.com/r/pixel_phones/",
+  "https://www.reddit.com/r/aivideo/",
+  "https://www.reddit.com/r/GeminiAI/",
+  "https://www.reddit.com/r/androidapps/",
+  "https://www.reddit.com/?feed=home",
+  "https://www.reddit.com/user/zeta_ferhu/m/feed_personalizado/",
+  "https://www.reddit.com/r/ChatGPT/",
+  "https://www.reddit.com/r/Biohackers/",
+  "https://www.reddit.com/r/kustom/",
+  "https://www.reddit.com/r/DentalHygiene/",
+  "https://www.reddit.com/r/promptingmagic/"
+];
+
+const last = localStorage.getItem("lastReddit");
+const available = urls.filter(url => url !== last);
+const selected = available[Math.floor(Math.random() * available.length)];
+
+localStorage.setItem("lastReddit", selected);
+window.location.replace(selected);
+</script>
+</body>
+</html>
